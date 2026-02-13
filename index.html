@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Football Training Tracker |Stecy Audrey</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+      body {
+        background-color: lightblue;
+        width: 90%;
+        text-align: center;
+        margin: 10px;
+        border-radius: 10px;
+      }
+      input {
+        width: 250px;
+        padding: 15px;
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 10px;
+        background-color: lightyellow;
+      }
+      button {
+        background-color: lightgreen;
+        font-weight: bold;
+        font-size: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Football Training Tracker</h1>
+    <input type="date" id="date">
+    <br>
+    <input type="number" id="minutes" placeholder="Minutes trained">
+    <br>
+    <input type="number" id="goals" placeholder="Goals scored">
+    <br>
+    <button onclick="addRecord()">Add Training</button>
+    <div id="records"></div>
+    <script>
+      function addRecord() {
+        let date =
+        document.getElementById("date").value;
+        let minutes =
+        document.getElementById("minutes").value;
+        let goals =
+        document.getElementById("goals").value;
+        let recordDiv =
+        document.createElement("div");
+        recordDiv.className = "record";
+        recordDiv.innerText =
+        "Date: " + date +
+        " | Minutes: " + minutes +
+        " | Goals :" + goals;
+        
+        document.getElementById("records").appendChild(recordDiv);
+      }
+    </script>
+  </body>
+</html>
